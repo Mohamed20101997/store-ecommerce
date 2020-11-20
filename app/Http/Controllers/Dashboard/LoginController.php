@@ -18,10 +18,10 @@ class LoginController extends Controller
 
     public function postLogin(AdminLoginRequest $request){
 
-        $remember_me = $request->has('remember_me') ? true : false ;
+        $remember_token = $request->has('remember_token') ? true : false ;
 
 
-        if(auth()->guard('admin')->attempt(['email'=> $request->input("email") ,'password' =>  $request->input("password")  ] , $remember_me))
+        if(auth()->guard('admin')->attempt(['email'=> $request->input("email") ,'password' =>  $request->input("password")  ] , $remember_token))
         {
             // notify()->success('تم الدخول بنجاح');
             return redirect()->route('admin.dashboard');
