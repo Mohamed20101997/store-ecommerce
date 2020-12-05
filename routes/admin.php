@@ -11,6 +11,10 @@ Route::group( ['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'l
 
             Route::get('/', 'DashboardController@index')->name('admin.dashboard');
 
+            //logout route
+            Route::get('logout', 'LoginController@logout')->name('admin.logout');
+
+
             // settings Route group
             Route::group(['prefix' => 'settings'], function () {
 
@@ -26,6 +30,8 @@ Route::group( ['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'l
         Route::group(['namespace' => 'Dashboard','middleware'=>'guest:admin','prefix'=>'admin'], function () {
 
             Route::get('login', 'LoginController@index')->name('admin.login');
+
+
             Route::post('login', 'LoginController@postLogin')->name('admin.post.login');
 
         });

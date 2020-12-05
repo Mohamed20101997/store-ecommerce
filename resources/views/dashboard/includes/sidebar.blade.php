@@ -88,7 +88,7 @@
 
 
     {{-- Start settings --}}
-    <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">الأعدادات</span></a>
+    <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">{{ __('admin/sidebar.settings') }}</span></a>
         <ul class="menu-content">
                         <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">سائل التوصيل</a>
                             <ul class="menu-content">

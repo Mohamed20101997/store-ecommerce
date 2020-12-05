@@ -26,10 +26,10 @@ class SettingDatabaseSeeder extends Seeder
             'free_shipping_cost'    => 0,
 
             'translatable'=>[
-                'store_name'            => 'Apo-Hieba Store',
-                'free_shipping_lable'   =>'Free Shipping',
-                'local_shipping_lable'  =>'Local Shipping',
-                'outer_shipping_lable'  =>'Outer Shipping',
+                'store_name'            => 'متجر أبو هيبه',
+                'free_shipping_lable'   =>'توصيل مجاني',
+                'local_shipping_lable'  =>'توصيل داخلي',
+                'outer_shipping_lable'  =>'توصيل خارجي',
             ],
 
         ]);
