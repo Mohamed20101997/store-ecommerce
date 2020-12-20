@@ -23,6 +23,14 @@ Route::group( ['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'l
 
             });
 
+            // Profile Route group
+            Route::group(['prefix' => 'profile'], function () {
+
+                Route::get('edit', 'ProfileController@editProfile')->name('edit.profile');
+                Route::put('update', 'ProfileController@updateProfile')->name('update.profile');
+
+            });
+
 
 
         });

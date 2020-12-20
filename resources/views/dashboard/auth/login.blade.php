@@ -9,7 +9,7 @@
                         <div class="card-title text-center">
                             <div class="p-1">
 
-                                <img src="" alt="LOGO"/>
+                                <img src="{{asset('assets/admin/images/logo/logo.png')}}" alt="LOGO"/>
 
                             </div>
                         </div>

@@ -175,7 +175,7 @@
                                     <tr class="bg-danger bg-lighten-5">
                                         <td>محمد عادل</td>
                                         <td>ساعة يد</td>
-                                        <td>5</td>
+                                        <td class="btn btn-d">5</td>
                                     </tr>
 
                                     </tbody>
