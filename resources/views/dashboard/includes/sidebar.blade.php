@@ -2,7 +2,7 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-            <li class="nav-item active"><a href=""><i class="la la-mouse-pointer"></i><span
+            <li class="nav-item active"><a href="{{route('admin.dashboard')}}"><i class="la la-mouse-pointer"></i><span
                         class="menu-title" data-i18n="nav.add_on_drag_drop.main">الرئيسية </span></a>
             </li>
 
@@ -88,7 +88,7 @@
 
 
     {{-- Start settings --}}
-    <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">الأعدادات</span></a>
+    <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">{{ __('admin/sidebar.settings') }}</span></a>
         <ul class="menu-content">
                         <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">سائل التوصيل</a>
                             <ul class="menu-content">
