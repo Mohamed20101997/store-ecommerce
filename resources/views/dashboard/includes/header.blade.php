@@ -46,7 +46,7 @@
 
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                            <span class="mr-1 btn btn-primary btn-sm" >{{LaravelLocalization::getCurrentLocale()}}</span>
+                            <span class="mr-1 " >{{LaravelLocalization::getCurrentLocale()}}</span>
 
                         </a>
 

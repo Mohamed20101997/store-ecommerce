@@ -40,6 +40,7 @@
         body {
             font-family: 'Cairo', sans-serif;
         }
+   
     </style>
 </head>
 <body class="vertical-layout vertical-menu 1-column   menu-expanded blank-page blank-page"
