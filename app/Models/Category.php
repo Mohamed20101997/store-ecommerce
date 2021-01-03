@@ -21,4 +21,22 @@ class Category extends Model
         'is_active' => 'boolean',
     ];
 
+
+    public function getActive(){
+        return $this->is_active == 1 ? 'مفعل' : 'غير مفعل' ;
+    }
+
+    //////// Scope
+
+    public function scopeParent($q){
+        return $q->whereNull('parent_id');
+    }
+
+     ////////  relations
+
+         public function _parent()
+        {
+            return $this->belongsTo( self::class, 'parent_id');
+        }
+
 }

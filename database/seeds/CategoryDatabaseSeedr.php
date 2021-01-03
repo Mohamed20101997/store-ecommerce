@@ -15,3 +15,4 @@ class CategoryDatabaseSeedr extends Seeder
         factory(Category::class , 28)->create();
     }
 }
+ 

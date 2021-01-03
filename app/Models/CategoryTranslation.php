@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class CategoryTranslation extends Model
 {
-    protected $fillabel = ['name'];
+    protected $fillable = ['name'];
     public $timestamps = false;
 }

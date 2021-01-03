@@ -59,6 +59,9 @@
         body {
             font-family: 'Cairo', sans-serif;
         }
+             .select2-container{
+            width: 50% !important;
+        }
     </style>
 </head>
 <body class="vertical-layout vertical-menu 2-columns menu-expanded fixed-navbar"
