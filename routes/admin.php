@@ -33,6 +33,9 @@ Route::group( ['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'l
             // Category Routes
             Route::resource('category', 'MainCategoriesController');
 
+            // Brand Routes
+            Route::resource('brands', 'BrandsController');
+
 
 
 

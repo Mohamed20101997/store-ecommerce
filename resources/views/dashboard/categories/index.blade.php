@@ -57,32 +57,32 @@
                                         <tbody>
 
                                             @isset($categories)
-                                            @foreach($categories as $category)
-                                            <tr>
-                                                <td>{{$category -> name}}</td>
-                                                <td>{{$category -> _parent->name  ?? '--' }}</td>
-                                                <td>{{$category -> slug}}</td>
-                                                <td>{{$category -> getActive()}}</td>
-                                                <td> <img style="width: 150px; height: 100px;" src=" "></td>
-                                                <td>
-                                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                                        <a href="{{route('category.edit', $category ->id)}}"
-                                                            class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
+                                                @foreach($categories as $category)
+                                                <tr>
+                                                    <td>{{$category -> name}}</td>
+                                                    <td>{{$category -> _parent->name  ?? '--' }}</td>
+                                                    <td>{{$category -> slug}}</td>
+                                                    <td>{{$category -> getActive()}}</td>
+                                                    <td> <img style="width: 150px; height: 100px;" src=" "></td>
+                                                    <td>
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <a href="{{route('category.edit', $category ->id)}}"
+                                                                class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
 
 
-                                                            <form action="{{route('category.destroy' , $category ->id)}}" method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
+                                                                <form action="{{route('category.destroy' , $category ->id)}}" method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
 
-                                                                 <button type="submit" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</button>
-                                                            </form>
+                                                                    <button type="submit" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</button>
+                                                                </form>
 
 
 
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            @endforeach
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                @endforeach
                                             @endisset
 
 

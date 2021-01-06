@@ -33,7 +33,11 @@ class MainCategoriesController extends Controller
 
 
             DB::beginTransaction();
-            !$request->has('is_active') ? $request->request->add(['is_active' , 0]) : $request->request->add(['is_active' , 1]);
+
+            if (!$request->has('is_active'))
+            $request->request->add(['is_active' => 0]);
+                else
+            $request->request->add(['is_active' => 1]);
 
 
             $category =  Category::create($request->except(['_token','type']));
@@ -87,7 +91,10 @@ class MainCategoriesController extends Controller
                 return redirect()->route('category.index')->with(['error' => 'هذا القسم غير موجود']) ;
             }
 
-            !$request->has('is_active') ? $request->request->add(['is_active' , 0]) : $request->request->add(['is_active' , 1]);
+            if (!$request->has('is_active'))
+            $request->request->add(['is_active' => 0]);
+                else
+            $request->request->add(['is_active' => 1]);;
 
 
             $category->update($request->all());
