@@ -22,21 +22,23 @@ class Category extends Model
     ];
 
 
-    public function getActive(){
+        public function getActive()
+    {
         return $this->is_active == 1 ? 'مفعل' : 'غير مفعل' ;
     }
 
     //////// Scope
 
-    public function scopeParent($q){
+        public function scopeParent($q)
+    {
         return $q->whereNull('parent_id');
     }
 
      ////////  relations
 
-         public function _parent()
-        {
-            return $this->belongsTo( self::class, 'parent_id');
-        }
+        public function _parent()
+    {
+        return $this->belongsTo( self::class, 'parent_id');
+    }
 
 }
