@@ -21,7 +21,7 @@ class MainCategoriesController extends Controller
 
     public function create()
     {
-        $categories  = Category::parent()->orderBy('id','DESC')->get();
+        $categories  = Category::orderBy('id','DESC')->get();
 
         return view('dashboard.categories.create', compact('categories'));
     }
@@ -30,8 +30,6 @@ class MainCategoriesController extends Controller
     public function store(MainCategoryRequest $request)
     {
         try{
-
-
             DB::beginTransaction();
 
             if (!$request->has('is_active'))
