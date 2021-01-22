@@ -26,5 +26,13 @@ class Brand extends Model
         return $this->is_active == 1 ? 'مفعل' : 'غير مفعل' ;
     }
 
- 
+
+
+      //////////// scope //////////////////////
+
+      public function scopeActive($q){
+
+        return $q->where('is_active', 1);
+    }
+
 }

@@ -39,6 +39,9 @@ Route::group( ['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'l
             // tags Routes
             Route::resource('tags', 'TagsController');
 
+            // products Routes
+            Route::resource('products', 'ProductsController');
+
 
 
 
