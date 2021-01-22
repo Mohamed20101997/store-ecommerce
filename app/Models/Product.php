@@ -48,10 +48,9 @@ class Product extends Model
 
 
         /////////////////////// functions  ////////////////
-
         public function getActive()
         {
-            return $this->is_active == 0 ? 'غير مفعل' : 'مفعل';
+            return $this->is_active == 1 ? 'مفعل' : 'غير مفعل' ;
         }
 
         //////////// relations //////////////////////
@@ -75,5 +74,10 @@ class Product extends Model
         public function scopeActive($q){
 
             return $q->where('is_active', 1);
+        }
+
+        public function images()
+        {
+            return $this->hasMany(Image::class, 'product_id');
         }
 }

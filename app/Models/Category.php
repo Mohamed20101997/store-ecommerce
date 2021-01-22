@@ -27,14 +27,19 @@ class Category extends Model
         return $this->is_active == 1 ? 'مفعل' : 'غير مفعل' ;
     }
 
-    //////// Scope
+    //////// Scope /////////////////////
 
         public function scopeParent($q)
     {
         return $q->whereNull('parent_id');
     }
 
-     ////////  relations
+    public function scopeActive($q){
+
+        return $q->where('is_active', 1);
+    }
+
+     ////////  relations /////////////////
 
         public function _parent()
     {
