@@ -134,6 +134,7 @@
                                                                     @endif
                                                                 </optgroup>
                                                             </select>
+                                                            <br>
                                                             @error('categories')
                                                                 <span class="text-danger"> {{$message}}</span>
                                                             @enderror
@@ -153,6 +154,7 @@
                                                                     @endif
                                                                 </optgroup>
                                                             </select>
+                                                            <br>
                                                             @error('tags')
                                                                 <span class="text-danger"> {{$message}}</span>
                                                             @enderror
@@ -171,6 +173,7 @@
                                                                     @endif
                                                                 </optgroup>
                                                             </select>
+                                                            <br>
                                                             @error('brand_id')
                                                                 <span class="text-danger"> {{$message}}</span>
                                                             @enderror
