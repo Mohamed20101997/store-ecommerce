@@ -41,6 +41,13 @@ Route::group( ['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'l
 
             // products Routes
             Route::resource('products', 'ProductsController');
+            // product price
+            Route::get('productPrice/{id}', 'ProductsController@getPrice')->name('products.getPrice');
+            Route::post('productPrice', 'ProductsController@saveProductPrice')->name('products.saveProductPrice');
+
+            // product stock
+            Route::get('productStock/{id}', 'ProductsController@getStock')->name('products.getStock');
+            Route::post('productStock', 'ProductsController@saveProductStock')->name('products.saveProductStock');
 
 
 

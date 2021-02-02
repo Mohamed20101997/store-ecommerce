@@ -60,7 +60,7 @@
             font-family: 'Cairo', sans-serif;
         }
              .select2-container{
-            width: 50% !important;
+            width: 50%;
         }
     </style>
 </head>
