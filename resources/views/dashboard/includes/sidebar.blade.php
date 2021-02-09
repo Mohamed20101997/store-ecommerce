@@ -21,21 +21,6 @@
                 </ul>
             </li>
 
-            {{--  <li class="nav-item"><a href=""><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">الاقسام الفرعية   </span>
-                    <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">400</span>
-                </a>
-                <ul class="menu-content">
-                    <li><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
-                    </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
-                            قسم فرعي جديد </a>
-                    </li>
-                </ul>
-            </li>  --}} {{--i will do it--}}
-
             <li class="nav-item">
                 <a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> الماركات التجارية  </span>
@@ -75,6 +60,19 @@
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
                     <li><a class="menu-item" href="{{route('products.create')}}" data-i18n="nav.dash.crypto">أضافة
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main"> الخصائص </span>
+                    <span
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Attribute::count()}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{{route('attributes.index')}}" data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{route('attributes.create')}}" data-i18n="nav.dash.crypto">أضافة
                         </a>
                     </li>
                 </ul>

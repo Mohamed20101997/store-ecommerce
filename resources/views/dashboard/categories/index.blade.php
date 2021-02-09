@@ -68,17 +68,12 @@
                                                         <div class="btn-group" role="group" aria-label="Basic example">
                                                             <a href="{{route('category.edit', $category ->id)}}"
                                                                 class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
-
-
                                                                 <form action="{{route('category.destroy' , $category ->id)}}" method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
 
                                                                     <button type="submit" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</button>
                                                                 </form>
-
-
-
                                                         </div>
                                                     </td>
                                                 </tr>

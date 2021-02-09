@@ -5,7 +5,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 //note that the prefix is admin for all file route
-Route::group( ['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ] ], function(){
+Route::group( ['prefix' => LaravelLocalization::setLocale(),
+'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ] ], function(){
 
         Route::group(['namespace' => 'Dashboard', 'middleware'=>'auth:admin','prefix'=>'admin'], function () {
 
@@ -49,7 +50,16 @@ Route::group( ['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'l
             Route::get('productStock/{id}', 'ProductsController@getStock')->name('products.getStock');
             Route::post('productStock', 'ProductsController@saveProductStock')->name('products.saveProductStock');
 
+            // product images
+            Route::get('productImage/{id}', 'ProductsController@getImage')->name('products.getImage');
+            Route::post('productImage', 'ProductsController@saveProductImage')->name('products.saveProductImage');
+            Route::post('productImageDb', 'ProductsController@saveProductImageDb')->name('products.saveProductImageDb');
 
+            // products attributes
+            Route::resource('attributes', 'AttributesController');
+
+            // products options
+            Route::resource('options', 'OptionController');
 
 
         });

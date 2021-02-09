@@ -63,18 +63,7 @@
 
                                         <h4 class="form-section"><i class="ft-home"></i> بيانات القسم </h4>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="projectinput1"> اسم القسم
-                                                    </label>
-                                                    <input type="text" id="name" class="form-control" placeholder="  "
-                                                        value="{{old('name')}}" name="name">
-                                                    @error("name")
-                                                    <span class="text-danger">{{$message}}</span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-
+                                       
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="projectinput1"> اسم بالرابط
@@ -126,7 +115,7 @@
 
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
 
                                         <div class="row hidden" id="cats_list">

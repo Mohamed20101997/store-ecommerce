@@ -2,6 +2,7 @@
 <html class="loading" lang="en" data-textdirection="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description"
@@ -48,6 +49,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/cryptocoins/cryptocoins.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/datedropper.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/timedropper.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/file-uploaders/dropzone.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/plugins/file-uploaders/dropzone.css')}}">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'. getFolder() .'/style-rtl.css')}}">
@@ -59,8 +62,16 @@
         body {
             font-family: 'Cairo', sans-serif;
         }
-             .select2-container{
+        .select2-container{
             width: 50%;
+        }
+        div.dataTables_wrapper div.dataTables_filter label,
+        table.dataTable,
+        .dataTables_scrollHeadInner,.dataTable {
+            width:100%;
+        }
+        div.dataTables_wrapper div.dataTables_filter label, table.dataTable, .dataTables_scrollHeadInner, .dataTable{
+            width: 100% !important
         }
     </style>
 </head>
@@ -124,6 +135,7 @@
 <script src="{{asset('assets/admin/js/scripts/forms/checkbox-radio.js')}}" type="text/javascript"></script>
 
 <script src="{{asset('assets/admin/js/scripts/modal/components-modal.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/vendors/js/extensions/dropzone.min.js')}}" type="text/javascript"></script>
 
 <script>
     $('#meridians1').timeDropper({

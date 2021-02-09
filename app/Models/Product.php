@@ -59,6 +59,10 @@ class Product extends Model
             return $this->belongsTo(Brand::class)->withDefault();
         }
 
+        public function opti(){
+            return $this->belongsTo(Brand::class)->withDefault();
+        }
+
         public function categories(){
 
             return $this->belongsToMany(Category::class , 'product_categories');
@@ -76,6 +80,11 @@ class Product extends Model
             return $q->where('is_active', 1);
         }
 
+        public function options()
+        {
+            return $this->hasMany(Option::class,'product_id');
+        }
+        
         public function images()
         {
             return $this->hasMany(Image::class, 'product_id');
