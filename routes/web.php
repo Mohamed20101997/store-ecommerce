@@ -18,5 +18,8 @@ Route::get('test', function () {
     $category = \App\Models\Category::first();
     $category->makeVisible('translations');
     return $category ;
-
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

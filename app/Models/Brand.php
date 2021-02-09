@@ -12,7 +12,7 @@ class Brand extends Model
 
     protected $translatedAttributes = ['name'];
 
-    protected $fillable = ['photo',];
+    protected $fillable = ['photo','is_active'];
 
 
     protected $casts = [

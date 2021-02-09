@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GeneralProductRequest;
+use App\Http\Requests\ProductImagesRequest;
 use App\Http\Requests\ProductPriceValidation;
 use App\Http\Requests\ProductStockRequest;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -102,13 +104,54 @@ class ProductsController extends Controller
     public function saveProductStock (ProductStockRequest $request){
 
         try{
-                Product::whereId($request -> product_id) -> update($request -> except(['_token','product_id']));
+            Product::whereId($request -> product_id) -> update($request -> except(['_token','product_id']));
 
                 return redirect()->route('products.index')->with(['success' => 'تم التحديث بنجاح']);
         }catch(\Exception $ex){
 
-                return redirect()->route('products.index')->with(['error'=>' هناك خطاء ما برجاء المحاولة فيما بعد']);
+            return redirect()->route('products.index')->with(['error'=>' هناك خطاء ما برجاء المحاولة فيما بعد']);
         }
+    }
+
+    public function getImage($product_id){
+
+        return view('dashboard.products.images.create') -> with('id',$product_id) ;
+    }
+
+    public function saveProductImage (Request $request){
+
+        $file = $request->file('dzfile');
+
+        $fileName = uploadImage('products', $file);
+
+        return response()->json([
+            'name'=>$fileName,
+            'original_name' => $file->getClientOriginalName(),
+        ]);
+
+    }
+    public function saveProductImageDb (ProductImagesRequest $request){
+
+        try{
+
+            if($request->has('photos') && count($request->photos)> 0){
+
+                foreach($request->photos as $photo){
+
+                    Image::create([
+                        'product_id' => $request->product_id,
+                        'photo' => $photo,
+                    ]);
+                }
+
+            }
+
+            return redirect()->route('products.index')->with(['success' => 'تم التحديث بنجاح']);
+        }catch(\Exception $ex){
+
+            return redirect()->back()->with(['error'=>' هناك خطاء ما برجاء المحاولة فيما بعد']);
+        }
+
     }
 
     public function show($id)

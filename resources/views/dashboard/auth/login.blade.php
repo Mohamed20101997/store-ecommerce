@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.login')
 @section('title','الدخول')
 @section('content')
     <section class="flexbox-container">
