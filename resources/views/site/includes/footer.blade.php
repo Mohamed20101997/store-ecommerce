@@ -16,8 +16,7 @@
                                         </div>
                                         <input type="hidden" name="action" value="0">
                                     </form>
-                                </div>
-                                <div class="social-content">
+                                </div><div class="social-content">
                                     <div class="title_block">
                                         Follow us on
                                     </div>

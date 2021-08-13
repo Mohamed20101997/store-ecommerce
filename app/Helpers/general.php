@@ -24,6 +24,7 @@ function remove_previous($brand)
 
  } //end of remove_previous function
 
+
 function image_path($folder , $val)
  {
     return asset('assets/images/' . $folder .'/'. $val);
