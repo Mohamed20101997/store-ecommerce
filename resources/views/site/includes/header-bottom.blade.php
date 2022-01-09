@@ -7,7 +7,7 @@
                     <span class="btnov-lines"></span>
                     <span>Shop By Categories</span>
                 </div>
-                <div class="verticalmenu-content has-showmore show">
+                <div class="verticalmenu-content has-showmore">
                     <div id="_desktop_verticalmenu" class="nov-verticalmenu block" data-count_showmore="6">
                         <div class="box-content block_content">
                             <div id="verticalmenu" class="verticalmenu" role="navigation">
@@ -40,12 +40,12 @@
                                                                         </div>
 
                                                                 </li>
-                                                          
+
                                                         </ul>
                                                     </div>
 
                                             </li>
-                                      
+
 
 
 

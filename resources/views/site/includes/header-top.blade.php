@@ -19,7 +19,7 @@
                     <div class="register-out">
                         <i class="zmdi zmdi-account"></i>
                         @guest()
-                            <a class="register" href=""
+                            <a class="register" href="{{route('register')}}"
                                data-link-action="display-register-form">
                                 Register
                             </a>
@@ -28,10 +28,10 @@
                                 in</a>
                         @endguest
                         @auth()
-                            <a href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 Logout
                             </a>
-                            <form id="logout-form" action="" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
                         @endauth
